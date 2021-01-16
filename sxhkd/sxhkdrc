@@ -3,7 +3,7 @@
 #
 super + b 
 	brave
-#super + d
-#	dmenu_run
+super + d
+	dmenu_run
 #super + Return 
 #	kitty
