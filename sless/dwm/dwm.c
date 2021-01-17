@@ -1727,7 +1727,6 @@ sigdwmblocks(const Arg *arg)
 		}
 	}
 }
-
 void
 spawn(const Arg *arg)
 {

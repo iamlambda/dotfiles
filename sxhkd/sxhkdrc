@@ -5,5 +5,5 @@ super + b
 	brave
 super + d
 	dmenu_run
-#super + Return 
-#	kitty
+super + Return 
+	kitty

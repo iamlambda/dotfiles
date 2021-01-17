@@ -12,7 +12,7 @@ static const char col_gray1[]       = "#0F1215";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#6699cc";
+static const char col_cyan[]        = "#7;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },// unfocused window and left/right bar
@@ -69,7 +69,7 @@ static const char *termcmd[]  = { "kitty", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	// { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+//	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_z,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
