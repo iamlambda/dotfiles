@@ -1,0 +1,165 @@
+[bar/bar]
+background = #0f1419
+foreground = #e6e1cf
+font-0 = droid sans mono for powerline:size=11;3
+font-1 = Font Awesome 5 Free Solid:size=11;3
+font-2 = Font Awesome 5 Brands:size=10;3
+width = 100%
+height = 35
+wm-restack = bspwm
+modules-left = bspwm
+modules-center = music
+modules-right = time
+separator-right = ◀
+separator-left = ▶
+line-size = 3
+line-color = #81a1c1
+
+#tray-position = left
+#tray-padding = 2
+#tray-background = #21262B
+
+[module/i_ws]
+type = custom/text
+content = "    "
+content-foreground = #323d43
+content-background = #2f8ab7
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state>
+label-occupied-foreground = #e6e1cf
+label-occupied-background = #0f1419
+label-focused-foreground = #e6e1cf
+label-focused-background = #21262B
+label-empty-foreground = #e6e1cf
+label-empty-background = #0f1419
+label-focused = %name%
+label-occupied = %name%
+label-empty = %name%
+label-focused-padding = 2
+label-occupied-padding = 2
+label-empty-padding = 2
+
+[module/test]
+type = custom/text
+content = |
+content-foreground = #e6e1cf
+content-background = #0f1419
+content-font = 0
+content-padding = 2;
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 30
+label-empty =
+format-padding = 2
+format-prefix-font = 2
+format-background = #bf616a
+format-foreground = #21262B
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-muted = "    Muted  "
+label-volume = "    %percentage%%  "
+format-volume-background = #e2a478
+format-volume-foreground = #0f1419
+format-muted-background = #e2a478
+format-muted-foreground = #0f1419
+
+[module/wifi]
+type = internal/network
+interface = enp4s0
+label-connected = "    %essid%  "
+label-disconnected = "    N/A  "
+label-connected-foreground = #21262B
+label-connected-background = #81a1c1
+label-disconnected-foreground = #21262B
+label-disconnected-background = #81a1c1
+
+[module/weather]
+type = custom/script
+exec = ~/.config/bspwm/weather.sh
+interval = 1800
+format-foreground = #0f1419
+format-background = #e27878
+[module/battery]
+type = internal/battery
+label-charging = "     %percentage%%  "
+label-discharging = "   %percentage%%  "
+label-discharging-foreground = #323d43
+label-discharging-background = #89beba
+label-charging-foreground = #323d43
+label-charging-background = #89beba
+
+[module/date]
+type = internal/date
+date = %A, %d %B
+label = "    %date%  "
+label-foreground = #0f1419
+label-background = #91acd1
+
+[module/time]
+type = internal/date
+date = %I:%M %p
+label = "   %date%  "
+label-foreground = #e6e1cf
+label-background = #0f1419
+
+[module/music]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+format-online = <label-song>
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+format-offline = ${self.label-offline}
+label-song = "   %artist% - %title%  "
+label-offline = "  MPD not running  "
+label-song-foreground = #323d43
+label-song-background = #a7c080
+format-offline-foreground = #323d43
+format-offline-background = #a7c080
+
+[module/updown]
+type = internal/network
+interface = enp4s0
+label-disconnected = "   N/A   N/A  "
+label-connected = "   %downspeed%   %upspeed%  "
+label-connected-foreground = #0f1419
+label-connected-background = #b4be82
+label-disconnected-foreground = #0f1419
+label-disconnected-background = #b4be82
+
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+
+label-open-foreground = #a3be8c
+label-close =  cancel
+label-close-foreground = #a3be8c
+label-separator = |
+label-separator-foreground = #a3be8c
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
