@@ -1,12 +1,10 @@
 "syntax enable
-"set termguicolors " super important / themes background
-o"
+set termguicolors " super important / themes background
 
 " set leader key
 let g:mapleader = "\<Space>"
 
-" set one dark
-"let g:onedark_termcolors=256
+let g:onedark_termcolors=256
 
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
@@ -40,7 +38,7 @@ set path+=**
 set relativenumber
 set hlsearch
 set cursorline
-set tabstop=2
+set tabstop=4
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -61,11 +59,13 @@ Plug 'vim-airline/vim-airline' " bar
 Plug 'jiangmiao/auto-pairs' " close brackets 
 Plug 'scrooloose/nerdtree' "  file manager
 Plug 'sheerun/vim-polyglot' " syntax highlighting
+Plug 'norcalli/nvim-colorizer.lua' " color preview with hexa 
 " Plug 'vim-airline/vim-airline-themes' " bar themes
 "Plug 'morhetz/gruvbox'
 "Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 call plug#end()
+lua require'colorizer'.setup()
 
 source $HOME/.config/nvim/themes/onedark.vim
 "colorscheme dracula

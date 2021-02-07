@@ -1,13 +1,12 @@
 [bar/bar]
-background = #0f1419
+background = #0F1215
 foreground = #e6e1cf
 font-0 = droid sans mono for powerline:size=11;3
 font-1 = Font Awesome 5 Free Solid:size=11;3
 font-2 = Font Awesome 5 Brands:size=10;3
 width = 100%
 height = 35
-wm-restack = bspwm
-modules-left = bspwm
+modules-left = i3
 modules-center = music
 modules-right = time
 separator-right = ◀
@@ -19,35 +18,34 @@ line-color = #81a1c1
 #tray-padding = 2
 #tray-background = #21262B
 
-[module/i_ws]
-type = custom/text
-content = "    "
-content-foreground = #323d43
-content-background = #2f8ab7
-
-[module/bspwm]
-type = internal/bspwm
-format = <label-state>
-label-occupied-foreground = #e6e1cf
-label-occupied-background = #0f1419
-label-focused-foreground = #e6e1cf
-label-focused-background = #21262B
-label-empty-foreground = #e6e1cf
-label-empty-background = #0f1419
-label-focused = %name%
-label-occupied = %name%
-label-empty = %name%
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+format = <label-mode><label-state>
+label-mode-padding = 2
+label-focused =  %icon%
 label-focused-padding = 2
-label-occupied-padding = 2
-label-empty-padding = 2
+label-unfocused =  %icon%
+label-unfocused-padding = 2
+label-visible =  %icon%
+label-visible-padding = 2
+label-urgent =  %icon%
+label-urgent-padding = 2
+label-focused-background = #2F3344
 
-[module/test]
-type = custom/text
-content = |
-content-foreground = #e6e1cf
-content-background = #0f1419
-content-font = 0
-content-padding = 2;
+ws-icon-0 = 1;
+ws-icon-2 = 2;
+ws-icon-1 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
 
 [module/xwindow]
 type = internal/xwindow
@@ -70,30 +68,6 @@ format-volume-foreground = #0f1419
 format-muted-background = #e2a478
 format-muted-foreground = #0f1419
 
-[module/wifi]
-type = internal/network
-interface = enp4s0
-label-connected = "    %essid%  "
-label-disconnected = "    N/A  "
-label-connected-foreground = #21262B
-label-connected-background = #81a1c1
-label-disconnected-foreground = #21262B
-label-disconnected-background = #81a1c1
-
-[module/weather]
-type = custom/script
-exec = ~/.config/bspwm/weather.sh
-interval = 1800
-format-foreground = #0f1419
-format-background = #e27878
-[module/battery]
-type = internal/battery
-label-charging = "     %percentage%%  "
-label-discharging = "   %percentage%%  "
-label-discharging-foreground = #323d43
-label-discharging-background = #89beba
-label-charging-foreground = #323d43
-label-charging-background = #89beba
 
 [module/date]
 type = internal/date
