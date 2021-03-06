@@ -54,7 +54,7 @@ endfunction
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto complete
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto complete
 Plug 'vim-airline/vim-airline' " bar
 Plug 'jiangmiao/auto-pairs' " close brackets 
 Plug 'scrooloose/nerdtree' "  file manager
