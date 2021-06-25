@@ -1,0 +1,3 @@
+#!/bin/sh
+S="$(mpc current)"
+notify-send "Now playing: " "$S"
