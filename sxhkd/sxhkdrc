@@ -1,7 +1,3 @@
-# terminal emulator
-super + Return
-	kitty
-# program launcher
 super + d
 	rofi -show run
 super + Delete
@@ -11,4 +7,3 @@ super + n
 # make sxhkd reload its configuration file:
 super + Escape
 	killall sxhkd ; sxhkd
-
